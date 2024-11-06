@@ -1,18 +1,22 @@
 {
+    "version": "0.2.0",
     "configurations": [
+        
+
         {
-            "type": "debugpy",
+            "name": "Python: Flask",
+            "type": "python",
             "request": "launch",
-            "name": "Launch h3-repo",
-            "program": "${workspaceFolder}/${input:programName}",
-            "console": "integratedTerminal"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "promptString",
-            "id": "programName",
-            "description": "Enter the path to the Python file to launch (e.g., main.py)"
+            "program": "main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/h3_repo",
+            "env": {
+                "FLASK_APP": "main.py",
+                "FLASK_ENV": "development"
+            },
+            "args": [
+                "run"
+            ]
         }
     ]
 }

@@ -3,16 +3,19 @@ import os
 # reads files from directory and sends them as an html table
 def get_table_html(directory):
     # get all files in the directory
-    files = [f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
+    
+    files = [f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f)) and f.endswith('pdf')]
     # create the table
     headers = ["File Name", "pdf", "text", "Size (bytes)"]
     rows = []
     for file in files:
         # get the file size
         pdf_link = os.path.join(directory, file)
+        txt_link = os.path.join(directory, file + '.txt')
+
         size = os.path.getsize(os.path.join(directory, file))
         # create a row with the file name and size
-        row = [file, f'<a href="{pdf_link}">pdf</a>', f'<a href="{file}.txt">text</a>', size]
+        row = [file, f'<a href="{pdf_link}">pdf</a>', f'<a href="{txt_link}">text</a>', size]
         rows.append(row)
 
     table = "<table><tr>"
