@@ -1,0 +1,155 @@
+ 
+Website: www.coe.int/cm  Declaration by the Committee of Ministers  
+on the manipulative capabilities of algorithmic processes  
+ 
+(Adopted by the Committee of Ministers on 13 February  2019  
+at the 1337th meeting of the Ministers' Deputies)  
+  
+1. Council of Europe member States have committed themselves to building societies based on the 
+values of democracy, human rights and the rule of law. This commitment remains and should be honoured 
+throughout the ongoing process of societal transformation tha t is fuelled by technological advancements. 
+Member States must ensure the rights and freedoms enshrined in the Convention for the Protection of 
+Human Rights and Fundamental Freedoms (ETS No. 5)  to everyone within their jurisdiction, equally offline 
+and online, in an environment of unprecedented political, economic and cultural globalisation and 
+connectedness.   
+ 
+2. Digital services are used today as an essential tool of modern communication, includin g political 
+communication between governments and between public institutions and citizens. Moreover, they are 
+fundamental for a growing number of users for news consumption, education, entertainment, commercial 
+transactions and multiple other forms of eve ryday activities.  This results in unprecedented amounts of new 
+data that are constantly created with mounting speed and scale.  
+ 
+3. Advanced technologies play a pivotal role in maintaining the efficiency and public service value of 
+digitisation , in strengtheni ng individual autonomy and self -determination, and in enhancing human 
+flourishing by creating optimal conditions for the exercise of human rights. Reference is made in this context 
+to Recommendation CM/Rec(2007)16  of the Committee of Ministers to member States on measures to 
+promote the public service value of the internet; Recommendation CM/Rec(2014)6  of the Committee of 
+Ministers to member States on a G uide to human rights for internet users; and Recommendation 
+CM/Rec(2 018)2  of the Committee of Ministers to member States on the roles and responsibilities of internet 
+intermediaries.  
+ 
+4. Technology is an ever growing presence in our daily lives and prompts users to disclose their 
+relevant, including personal, data voluntar ily and for comparatively small awards of personal convenience. 
+Public  awareness, however, remains limited r egarding  the extent to which everyday devices collect and 
+generate vast amounts of data.  These data are  used to train machine -learning technologies to prioritise  
+search results, to predict and shape personal  preferences, to alter information flows, and, sometimes, to 
+subject individuals to behavioural experimentation.  
+ 
+5. Current discussions regarding the application and strengthening of data protection laws should 
+consider the particular risks for and interests of those persons that may be especially unaware of the 
+dangers of data exploitation. This includes children as we ll as persons belonging to marginalised 
+communities who may face language barriers or other structural disadvantages. It may also include those 
+who, because of their particularly large digital footprint, are especially exposed to new forms of data -driven 
+surveillance . 
+ 
+6.  Increasingly, computational means make it possible to infer intimate and detailed information about 
+individuals from readily available data. This supports the sorting of individuals into categories, thereby 
+reinforcing different forms of social, cultural,  religious, legal and economic segregation and discrimination. It 
+also facilitates the micro -targeting of individuals based on profiles in ways that may profoundly affect their 
+lives.  
+  MINISTERS’ DEPUTIES  Declarations  Decl(13/02/2019)1  13 February 2019 
+ Decl( 13/02/2019 )1 2 
+ 
+7. Moreover, data -driven technologies and systems are designed to conti nuously achieve optimum 
+solutions within the given parameters specified by their developers. When operating at scale, such 
+optimisation processes inevitably prioritise certain values over others, thereby shaping the contexts and 
+environments in which indiv iduals, users and non -users alike, process information and make their decisions. 
+This reconfiguration of environments may be beneficial for some individuals and groups while detrimental to 
+others, which raises serious questions about the resulting distribu tional outcomes. The effects of the 
+targeted use of constantly expanding volumes of aggregated data on the exercise of human rights in a 
+broader sense, significantly beyond the current notions of personal data protection and privacy, remain 
+understudied an d require serious consideration.  
+ 
+8. Contemporary machine learning tools have the  growing capacity not only to predict choices but also 
+to influence emotions and thoughts and alter an anticipated course of action, sometimes subliminally. The 
+dangers for democ ratic societies that emanate from the possibility to employ such capacity to manipulate 
+and control not only economic choices but also social and political behaviours, have only recently become 
+apparent. In this context, particular attention should be paid  to the significant power that technological 
+advancement confers to those – be they public entities or private actors – who may use such algorithmic 
+tools without adequate democratic oversight or control.  
+ 
+9. Fine grained, sub -conscious and personalised level s of algorithmic persuasion may have significant 
+effects on the cognitive autonomy of individuals and their right to form opinions and take independent 
+decisions. These effects remain underexplored but cannot be underestimated. Not only may they weaken 
+the exercise and enjoyment of individual human rights, but they may lead to the corrosion of the very 
+foundation of the Council of Europe. Its central pillars of human rights, democracy and the rule of law are 
+grounded on the fundamental belief in the equalit y and dignity of all humans as independent moral agents.  
+ 
+In view of the foregoing, the Committee of Ministers:  
+ 
+- draws attention to the growing threat to the right of human beings to form opinions and take 
+decisions independently of automated systems, which emanates from advanced digital technologies. 
+Attention should be paid particularly to their capacity to use personal and non -personal data to sort and 
+micro -target people, to identify individual vulnerabilities and exploit accurate predictive knowled ge, and to 
+reconfigure social environments in order to meet specific goals and vested interests;  
+ 
+- encourages member States to assume their responsibility to address this threat by  
+ 
+a) ensuring that adequate priority attention is paid at senior level to this inter-disciplinary 
+concern that often falls in between established mandates of relevant authorities;  
+ 
+b) considering the need for additional protective frameworks related to data that go beyond 
+current notions of personal data protection and privacy and addre ss the significant impacts of 
+the targeted use of data on societies and on the exercise of human rights more broadly;   
+ 
+c) initiating, within appropriate institutional frameworks, open -ended, informed and inclusive 
+public debates with a view to providing gui dance on where to draw the line between forms of 
+permissible persuasion and unacceptable manipulation. The latter may take the form of 
+influence that is subliminal, exploits existing vulnerabilities or cognitive biases, and/or 
+encroaches on the independenc e and authenticity of individual decision -making;  
+ 
+d) taking appropriate and proportionate measures to ensure that effective legal guarantees are 
+in place against such forms of illegitimate interference; and  
+ 
+e) empowering users by promoting critical digital lit eracy skills and robustly enhancing  public 
+awareness of how many data are generated and processed by personal devices, networks, 
+and platforms through algorithmic processes that are trained for data exploitation. 
+Specifically, public awareness should be en hanced of the fact that algorithmic tools are 
+widely used for commercial purposes and, increasingly, for political reasons, as well as for 
+ambitions of anti - or undemocratic power gain, warfare, or to inflict direct harm;  
+   3 Decl(13/02/2019 )1 
+  
+- underlines equally the responsi bility of member States to lead and support the exploration and 
+research into the autonomy, equality and welfare enhancing potential of advanced data processing and 
+machine learning technologies. In particular should incentives be created to develop servic es that 
+strengthen equal access to and enjoyment of human rights, and create broad value for society, among 
+others by encouraging the catering to the needs of historically marginalised or thus far underserved 
+communities. To this end, structural diversity in innovation and research should be promoted;  
+ 
+- acknowledges the need to consider, at both national and international levels, the growing onus on 
+the industry across sectors to live up to their important functions and influence with commensurate levels of 
+increased fairness, transparency and accountability, in line with their responsibility to respect human rights 
+and fundamental freedoms, and under the guidance of public institutions;  
+ 
+- stresses the societal role of academia in producing independent, evide nce-based and 
+interdisciplinary research and advice for decision -makers regarding the capacity of algorithmic tools to 
+enhance or interfere with the cognitive sovereignty of individuals. This research should take account of 
+existing diversity in societies,  and should include all backgrounds and ages of users not only regarding their 
+behaviours as consumers but including wider impacts on their emotional well -being and personal choices in 
+societal, institutional and political contexts;  
+ 
+- draws attention to the necessity of critically assessing the need for stronger regulatory or other 
+measures to ensure adequate and democratically legitimated oversight over the design, development, 
+deployment and use of algorithmic tools , with a view to ensuring that there i s effective protection against 
+unfair practices or abuse of position of market power;  
+ 
+- emphasises in particular the need to assess the regulatory frameworks related to political 
+communication and electoral processes to safeguard the fairness and integrity of elections offline as well as 
+online in line with establish ed principles. In particular it should be ensured that voters have access to 
+comparable levels of information across the political spectrum, that voters are aware of the dangers of 
+political redl ining, which occurs when political campaigning is limited to those most likely to be influenced, 
+and that voters are protected effectively against unfair practices and manipulation;  
+ 
+- underlines the vital role played by independent and pluralistic media in overseeing public affairs and 
+processes on behalf of the electorate, thereby acting as public watchdogs and contributing to meaningful 
+and informed debate;  
+ 
+- encourages member States to maintain an open and inclusive dialogue with all relevant 
+stakeholders globally with a view to avoiding path dependencies and fully considering all available options 
+towards effectively addressing this emerging and thus far unde rstudied, and possibly underestimated, 
+concern.  
+ 
+ 
+ 
+ 
+ 

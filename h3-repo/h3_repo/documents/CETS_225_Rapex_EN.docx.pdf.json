@@ -5,10 +5,8 @@
     "authority": "Council of Europe",
     "jurisdiction": "The European Union",
     "legally_binding": false,
-    "citations": {
-        "parents": [],
-        "children": []
-    },
+    "citations": ["Decl(13_02_2019)1E"],
     "description": "",
-    "title": "Explanatory Report to the Council of Europe Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law "
+    "title": "Explanatory Report to the Council of Europe Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law",
+    "url": "https://rm.coe.int/1680afae67"
 }
