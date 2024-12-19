@@ -6,51 +6,42 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 def extract_urls_from_html(html_file):
-    completed_urls = []
     with open(html_file, 'r') as f:
         soup = BeautifulSoup(f, 'html.parser')
-    all_urls = {} # url : page data pair (ex: https://eur-lex.europa.eu/legal-content/EN/AUTO/?uri=OJ:C:2021:517:TOC & OJ C 517, 22.12.2021, p. 56)
-    for link in soup.find_all('a'):
-        path = link.get('href')
-        label = link.get_text().strip()
-        if 'legal-content' in path:
-            all_urls[path] = label
+    all_urls = [] # url : page data pair (ex: https://eur-lex.europa.eu/legal-content/EN/AUTO/?uri=OJ:C:2021:517:TOC & OJ C 517, 22.12.2021, p. 56)
+    oj_notes = []
+    for note in soup.find_all('p', class_='oj-note'):
+        oj_notes.append(note)
+    
+    for note in oj_notes:
+        for link in note.find_all('a'):
+            path = link.get('href')
+            label = link.get_text().strip()
+            if 'legal-content' in path:
+                all_urls.append(complete_url(path, label))
         
     # find relevant urls
     # exclude urls including "https://data.europa.eu/eli/reg/2024/1689/oj" or "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689" (referring to EU AI Act itself)
     # iterate the dictionary url_data and leave only  that does not contain the above urls
     print("all urls:", len(all_urls))
-    for url in all_urls.keys():
-        if 'https://data.europa.eu/eli/reg/2024/1689/oj' not in url and 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689' not in url:
-            if '32024R1689' not in url and '202401689' not in url:
-                completed_urls.append(complete_url(url, all_urls[url]))
-    print("after removing self-reference:", len(completed_urls))
-    return completed_urls
+    print("all oj notes:", len(oj_notes))
 
+    return all_urls
 
-def extract_urls_from_url(url):
+def get_html_from_url(url):
     #url = 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.1985.210.01.0029.01.ENG&toc=OJ%3AL%3A1985%3A210%3ATOC'
     response = requests.get(url)
     if response.status_code == 200:
         html_content = response.text
         directory = os.getcwd()
-        file_path = os.path.join(directory, 'aiact_from_url.html')
+        file_name = re.sub(r'\W+', '_', url)[:50]  # Replace non-alphanumeric characters with underscores and limit length
+        file_path = os.path.join(directory, f'{file_name}.html')
         if not os.path.exists(directory):
             os.makedirs(directory)
         with open(file_path, 'w', encoding='utf-8') as file:
             print("writing the file!!", file_path)
             file.write(html_content)
-
-        # directory = 'h3_repo/eu_ai_act'
-        # file_path = os.path.join(directory, 'aiact_from_url.html')
-        # if not os.path.exists(directory):
-        #     os.makedirs(directory)
-        # with open(file_path, 'w', encoding='utf-8') as file:
-        #     soup = BeautifulSoup(html_content, 'html.parser')
-        #     all_urls = {} # url : page data pair
-        #     for link in soup.find_all('a'):
-        #         all_urls[link.get('href')] = link.get_text().strip()
-        #     return all_urls
+        return extract_urls_from_html(file_path) 
     else:
         print(f'Failed to retrieve content for url number: {url}')
         return None
@@ -73,10 +64,7 @@ def complete_url(url, url_data):
 # print(urls)
 
 
-
-
-
-def read_celex_to_html(celex_num):
+def read_celex_write_html(celex_num):
     '''
     Retrieve html of each document using CELEX and save the content (text) into a file {celex_num}.html
     '''
@@ -107,12 +95,23 @@ def find_celex(url):
     if response.status_code == 200:
         html_content = response.text
         soup = BeautifulSoup(html_content, 'html.parser')
-        document_title = soup.find('p', class_='DocumentTitle pull-left')
+        document_title = soup.find('p', class_='DocumentTitle pull-left') 
         if document_title:
             celex_num = document_title.text.strip()[9:]
     else:
         print(f'request error:{url}')          
     return celex_num
+
+
+def find_child_docs(seed_url):
+    children = list()
+    urls = get_html_from_url(seed_url)
+    for url in urls:
+        celex_num = find_celex(url)
+        # read_celex_write_html(celex_num)
+        children.append({celex_num:url})
+    return children
+
 
 if __name__ == '__main__':
     # html_path = 'h3-repo/h3_repo/eu_ai_act/L_202401689EN.000101.fmx.xml.html'
@@ -130,13 +129,14 @@ if __name__ == '__main__':
         # extract_urls_from_url(ai_act_url)
 
     ai_act_url = 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689&qid=1734617122196'
-    html_from_url_path = 'aiact_from_url.html' #/Users/yun/Dev/humanet3/human-centered-repo/
+    html_from_url_path = '/Users/yun/Dev/humanet3/human-centered-repo/aiact_from_url.html' #/Users/yun/Dev/humanet3/human-centered-repo/
     
     # extract_urls_from_url(ai_act_url)
-    from_url = extract_urls_from_html(html_from_url_path)
-    with open('eu_ai_act_refs_from_url.csv', 'w') as file:
-        for url in from_url:
-            file.write(url + '\n')
-    # Compare the two lists
+    # from_url = extract_urls_from_html(html_from_url_path)
+    # with open('eu_ai_act_refs_from_url.csv', 'w') as file:
+    #     for url in from_url:
+    #         file.write(url + '\n')
+
     
-    
+    children = find_child_docs(ai_act_url)
+    print(children)
