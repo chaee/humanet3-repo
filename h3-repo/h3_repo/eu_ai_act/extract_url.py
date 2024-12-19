@@ -4,6 +4,8 @@ import re
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import networkx as nx
+import json
 
 def extract_urls_from_html(html_file):
     with open(html_file, 'r') as f:
@@ -104,13 +106,61 @@ def find_celex(url):
 
 
 def find_child_docs(seed_url):
+    seed_celex = find_celex(seed_url)
     children = list()
     urls = get_html_from_url(seed_url)
     for url in urls:
         celex_num = find_celex(url)
-        # read_celex_write_html(celex_num)
-        children.append({celex_num:url})
+        children.append({celex_num: url})
+    
+    with open(f'{seed_celex}_children.json', 'w') as f:
+        json.dump(children, f, indent=4)
+    
     return children
+
+
+def bfs_find_child_docs(seed_url):
+    queue = [seed_url]
+    visited = set()
+    all_children = []
+
+    while queue:
+        current_url = queue.pop(0)
+        if current_url not in visited:
+            visited.add(current_url)
+            children = find_child_docs(current_url)
+            all_children.extend(children)
+            for child in children:
+                for celex_num, url in child.items():
+                    if url not in visited:
+                        queue.append(url)
+
+    with open('bfs_children.json', 'w') as f:
+        json.dump(all_children, f, indent=4)
+
+    return all_children
+
+
+def search_graph(seed_url):   
+    G = nx.DiGraph()
+    queue = [(seed_url, None)]  # (current_url, parent_url)
+    visited = set()
+
+    while queue:
+        current_url, parent_url = queue.pop(0)
+        if current_url not in visited:
+            visited.add(current_url)
+            if parent_url:
+                G.add_edge(parent_url, current_url)
+            children = find_child_docs(current_url)
+            for child in children:
+                for celex_num, url in child.items():
+                    if url not in visited:
+                        queue.append((url, current_url))
+
+    nx.write_gml(G, 'url_relationships.gml')
+    return G
+
 
 
 if __name__ == '__main__':
@@ -138,5 +188,20 @@ if __name__ == '__main__':
     #         file.write(url + '\n')
 
     
-    children = find_child_docs(ai_act_url)
-    print(children)
+    # children = find_child_docs(ai_act_url)
+    # print(children)
+
+    
+# Load initial URLs from 'ai_act_children.json' if exists
+    # try:
+    #     with open('ai_act_children.json', 'r') as f:
+    #         initial_urls = json.load(f)
+    #         initial_urls = [list(child.values())[0] for child in initial_urls]
+    # except FileNotFoundError:
+    #     initial_urls = [ai_act_url]
+
+    # # Perform BFS to find child documents
+    # for url in initial_urls:
+    #     bfs_find_child_docs(url)
+
+    search_graph(ai_act_url)
