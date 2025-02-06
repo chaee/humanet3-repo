@@ -12,7 +12,7 @@ def about():
     # create tables using file_to_table module
     doc_dir = 'documents'
     #table = file_to_table.get_table_html(doc_dir)
-    table = file_to_table.make_table_from_csv('documents/metadata.csv')
+    table = file_to_table.make_table_from_csv('h3_repo/documents/metadata.csv')
     # adjust table length for better display in the browser (table to fit the length of the text inside)
     table = table.replace('<table', '<table style="width:100%"')
     
@@ -29,9 +29,13 @@ def serve_pdf(filename):
     return send_from_directory(pdf_directory, filename)
 
 # Define a contact route
-@app.route('/graph')
-def contact():
-    return "<h1>Citation Graph!!</h1><p>Graaaaaph!.</p>"
+@app.route('/graph/<filename>')
+def serve_graph(filename):
+    graph_directory = os.path.join(app.root_path, 'graph')
+    return send_from_directory(graph_directory, filename)
+
+# def contact():
+#     return "<h1>Citation Graph!!</h1><p>Graaaaaph!.</p>"
 
 # Run the application
 if __name__ == '__main__':

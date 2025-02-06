@@ -61,5 +61,6 @@ def make_table_from_csv(csv_file):
     if 'HTML' in df.columns:
         df['HTML'] = df['HTML'].apply(lambda x: f'<a href="{x}">html</a>' if x else '')
     df['Text'] = df['File name'].apply(lambda x: f'<a href="/documents/{x}.txt">text</a>')
+    df['Graph'] = df['ID'].apply(lambda x: f'<a href="/graph/{x}.html">graph</a>')
     # Convert DataFrame to HTML
     return df.to_html(escape=False)

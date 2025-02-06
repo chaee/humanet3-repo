@@ -35,8 +35,8 @@ def get_html_from_url(url):
     response = requests.get(url)
     if response.status_code == 200:
         html_content = response.text
-        directory = os.getcwd()
-        file_name = re.sub(r'\W+', '_', url)[:50]  # Replace non-alphanumeric characters with underscores and limit length
+        directory = os.getcwd() #
+        file_name = re.sub(r'\W+', '_', url)[:-70]  # Replace non-alphanumeric characters with underscores and limit length
         file_path = os.path.join(directory, f'{file_name}.html')
         if not os.path.exists(directory):
             os.makedirs(directory)
@@ -74,10 +74,11 @@ def read_celex_write_html(celex_num):
     response = requests.get(url_format)
     if response.status_code == 200:
         html_content = response.text
-        file_path = os.path.join('eu_ai_act/references', f'{celex_num}.html')
+        html_dest_folder = 'eu_ai_act/html_references'
+        file_path = os.path.join(html_dest_folder, f'{celex_num}.html')
         if not os.path.exists(file_path):
-            if not os.path.exists('references'):
-                os.makedirs('references')
+            if not os.path.exists(html_dest_folder):
+                os.makedirs(html_dest_folder)
             with open(file_path, 'w', encoding='utf-8') as file:
                 soup = BeautifulSoup(html_content, 'html.parser')
                 text_content = soup.get_text()
@@ -97,9 +98,10 @@ def find_celex(url):
     if response.status_code == 200:
         html_content = response.text
         soup = BeautifulSoup(html_content, 'html.parser')
-        document_title = soup.find('p', class_='DocumentTitle pull-left') 
+        document_title = soup.find('p', class_='DocumentTitle pull-left')
         if document_title:
-            celex_num = document_title.text.strip()[9:]
+            # document_title.text example:
+            celex_num = document_title.text.strip()[9:] # TBD: Find regex with pattern (not hardcoded like now?)
     else:
         print(f'request error:{url}')          
     return celex_num
@@ -112,8 +114,10 @@ def find_child_docs(seed_url):
     for url in urls:
         celex_num = find_celex(url)
         children.append({celex_num: url})
-    
-    with open(f'{seed_celex}_children.json', 'w') as f:
+    # make a folder named as seed_celex and save the children as json file
+    if not os.path.exists(seed_celex):
+        os.makedirs(seed_celex)
+    with open(f'{seed_celex}/children.json', 'w') as f:
         json.dump(children, f, indent=4)
     
     return children
