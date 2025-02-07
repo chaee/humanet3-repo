@@ -28,14 +28,11 @@ def serve_pdf(filename):
     pdf_directory = os.path.join(app.root_path, 'documents')  # Adjust the directory as needed
     return send_from_directory(pdf_directory, filename)
 
-# Define a contact route
+# Define a route to serve graph files
 @app.route('/graph/<filename>')
 def serve_graph(filename):
     graph_directory = os.path.join(app.root_path, 'graph')
     return send_from_directory(graph_directory, filename)
-
-# def contact():
-#     return "<h1>Citation Graph!!</h1><p>Graaaaaph!.</p>"
 
 # Run the application
 if __name__ == '__main__':
