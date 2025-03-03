@@ -13,14 +13,14 @@ def extract_urls_from_html(html_file):
     all_urls = [] # url : page data pair (ex: https://eur-lex.europa.eu/legal-content/EN/AUTO/?uri=OJ:C:2021:517:TOC & OJ C 517, 22.12.2021, p. 56)
     oj_notes = []
     for note in soup.find_all('p', class_='oj-note'):
-        oj_notes.append(note)
+        all_urls.append(note)
     
-    for note in oj_notes:
+    for note in all_urls:
         for link in note.find_all('a'):
             path = link.get('href')
             label = link.get_text().strip()
             if 'legal-content' in path:
-                all_urls.append(complete_url(path, label))
+                oj_notes.append(complete_url(path, label))
         
     # find relevant urls
     # exclude urls including "https://data.europa.eu/eli/reg/2024/1689/oj" or "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689" (referring to EU AI Act itself)
