@@ -41,9 +41,9 @@ def save_html_from_url(celex, url):
         html_content = response.text
         script_dir = os.path.dirname(os.path.abspath(__file__))
 
-        if os.path.exists(os.path.join(script_dir, 'celex_data')) == False:
-            os.makedirs(os.path.join(script_dir, 'celex_data'))
-        file_path = os.path.join(script_dir, 'celex_data', f'{celex}.html')
+        if os.path.exists(os.path.join(script_dir, 'celex_html_data')) == False:
+            os.makedirs(os.path.join(script_dir, 'celex_html_data'))
+        file_path = os.path.join(script_dir, 'celex_html_data', f'{celex}.html')
 
         with open(file_path, 'w', encoding='utf-8') as file:
             print("writing the html file >> at f'{file_path}'")
