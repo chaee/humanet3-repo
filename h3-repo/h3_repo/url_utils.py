@@ -30,20 +30,26 @@ def extract_urls_from_html(html_file):
 
     return all_urls
 
-def get_html_from_url(url):
+def save_html_from_url(celex, url):
+    '''
+    Retrieve and save html from celex number or url
+    '''
+    print("getting html from f'{url}'")
     #url = 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.1985.210.01.0029.01.ENG&toc=OJ%3AL%3A1985%3A210%3ATOC'
     response = requests.get(url)
     if response.status_code == 200:
         html_content = response.text
-        directory = os.getcwd() #
-        file_name = re.sub(r'\W+', '_', url)[:-70]  # Replace non-alphanumeric characters with underscores and limit length
-        file_path = os.path.join(directory, f'{file_name}.html')
-        if not os.path.exists(directory):
-            os.makedirs(directory)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+
+        if os.path.exists(os.path.join(script_dir, 'celex_data')) == False:
+            os.makedirs(os.path.join(script_dir, 'celex_data'))
+        file_path = os.path.join(script_dir, 'celex_data', f'{celex}.html')
+
         with open(file_path, 'w', encoding='utf-8') as file:
-            print("writing the file!!", file_path)
+            print("writing the html file >> at f'{file_path}'")
             file.write(html_content)
-        return extract_urls_from_html(file_path) 
+        return file_path
+        # return extract_urls_from_html(file_path) # should separate 1. transform url into html -> 2. get child urls from html
     else:
         print(f'Failed to retrieve content for url number: {url}')
         return None
@@ -73,17 +79,8 @@ def read_celex_write_html(celex_num):
     url_format = f'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:{celex_num}'
     response = requests.get(url_format)
     if response.status_code == 200:
-        html_content = response.text
-        html_dest_folder = 'eu_ai_act/html_references'
-        file_path = os.path.join(html_dest_folder, f'{celex_num}.html')
-        if not os.path.exists(file_path):
-            if not os.path.exists(html_dest_folder):
-                os.makedirs(html_dest_folder)
-            with open(file_path, 'w', encoding='utf-8') as file:
-                soup = BeautifulSoup(html_content, 'html.parser')
-                text_content = soup.get_text()
-                file.write(text_content)
-        return html_content
+        return save_html_from_url(celex_num, url_format)
+
     else:
         print(f'Failed to retrieve content for CELEX number: {celex_num}')
         return None
@@ -102,9 +99,12 @@ def find_celex(url):
         if document_title:
             # document_title.text example:
             celex_num = document_title.text.strip()[9:] # TBD: Find regex with pattern (not hardcoded like now?)
+            return celex_num
+        else:
+            print(f'Failed to find CELEX number for url: {url}')
+            return None
     else:
         print(f'request error:{url}')          
-    return celex_num
 
 if __name__ == '__main__':
     # html_path = 'h3-repo/h3_repo/eu_ai_act/L_202401689EN.000101.fmx.xml.html'
