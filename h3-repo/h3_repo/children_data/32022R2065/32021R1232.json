@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Opinion of the European Economic and Social Committee on 'Proposal for a Regulation of the European Parliament and of the Council on a temporary derogation from certain provisions of Directive 2002/58/EC of the European Parliament and of the Council as regards the use of technologies by number-independent interpersonal communications service providers for the processing of personal and other data for the purpose of combatting child sexual abuse online' (COM(2020) 568 final \u2013 2020/0259 (COD))",
+        "parent_celex": "32021R1232",
+        "oj_num": "OJ C 10, 11.1.2021, p. 63-64",
+        "doc_type": "C",
+        "celex_num": "52020AE4192",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/AUTO/?uri=uriserv:OJ.C_.2021.010.01.0063.01.ENG&toc=OJ:C:2021:010:TOC"
+    },
+    {
+        "title": "Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and the protection of privacy in the electronic communications sector (Directive on privacy and electronic communications)",
+        "parent_celex": "32021R1232",
+        "oj_num": "OJ L 201, 31.7.2002, p. 37-47",
+        "doc_type": "L",
+        "celex_num": "32002L0058",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/AUTO/?uri=uriserv:OJ.L_.2002.201.01.0037.01.ENG&toc=OJ:L:2002:201:TOC"
+    },
+    {
+        "title": "Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) (Text with EEA relevance)",
+        "parent_celex": "32021R1232",
+        "oj_num": "OJ L 119, 4.5.2016, p. 1-88",
+        "doc_type": "L",
+        "celex_num": "32016R0679",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/AUTO/?uri=uriserv:OJ.L_.2016.119.01.0001.01.ENG&toc=OJ:L:2016:119:TOC"
+    },
+    {
+        "title": "Directive 2002/21/EC of the European Parliament and of the Council of 7 March 2002 on a common regulatory framework for electronic communications networks and services (Framework Directive)",
+        "parent_celex": "32021R1232",
+        "oj_num": "OJ L 108, 24.4.2002, p. 33-50",
+        "doc_type": "L",
+        "celex_num": "32002L0021",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/AUTO/?uri=uriserv:OJ.L_.2002.108.01.0033.01.ENG&toc=OJ:L:2002:108:TOC"
+    },
+    {
+        "title": "Directive (EU) 2018/1972 of the European Parliament and of the Council of 11 December 2018 establishing the European Electronic Communications Code (Recast) (Text with EEA relevance)",
+        "parent_celex": "32021R1232",
+        "oj_num": "OJ L 321, 17.12.2018, p. 36-214",
+        "doc_type": "L",
+        "celex_num": "32018L1972",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/AUTO/?uri=uriserv:OJ.L_.2018.321.01.0036.01.ENG&toc=OJ:L:2018:321:TOC"
+    },
+    {
+        "title": "Directive 2011/93/EU of the European Parliament and of the Council of 13 December 2011 on combating the sexual abuse and sexual exploitation of children and child pornography, and replacing Council Framework Decision 2004/68/JHA",
+        "parent_celex": "32021R1232",
+        "oj_num": "OJ L 335, 17.12.2011, p. 1-14",
+        "doc_type": "L",
+        "celex_num": "32011L0093",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/AUTO/?uri=uriserv:OJ.L_.2011.335.01.0001.01.ENG&toc=OJ:L:2011:335:TOC"
+    },
+    {
+        "title": "Regulation (EU) 2018/1725 of the European Parliament and of the Council of 23 October 2018 on the protection of natural persons with regard to the processing of personal data by the Union institutions, bodies, offices and agencies and on the free movement of such data, and repealing Regulation (EC) No 45/2001 and Decision No 1247/2002/EC (Text with EEA relevance.)",
+        "parent_celex": "32021R1232",
+        "oj_num": "OJ L 295, 21.11.2018, p. 39-98",
+        "doc_type": "L",
+        "celex_num": "32018R1725",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/AUTO/?uri=uriserv:OJ.L_.2018.295.01.0039.01.ENG&toc=OJ:L:2018:295:TOC"
+    }
+]
